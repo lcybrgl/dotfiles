@@ -1,0 +1,26 @@
+[global_config]
+  borderless = True
+  extra_styling = False
+  title_font = Go Mono for Powerline 12
+  title_transmit_bg_color = "#729fcf"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Go Mono for Powerline 12
+    foreground_color = "#ffffff"
+    icon_bell = False
+    scrollbar_position = hidden
+    use_system_font = False

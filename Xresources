@@ -1,0 +1,23 @@
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+XTerm*pointerColor: #16A085
+XTerm*faceSize: 11
+
+! ROFI SETUP HERE !
+
+rofi.color-enabled: true
+rofi.color-window: #3a4c54, #2a373e, #c3c6c8
+rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
+rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
+rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
+rofi.terminal:     termite
+rofi.ssh-client:   ssh
+rofi.ssh-command:  {terminal} -e "{ssh-client} {host}"
+
