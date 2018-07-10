@@ -62,6 +62,31 @@ function syncf()
     done
 }
 
+function syncd()
+{
+    if [ ! -d "$backdir/.config" ]
+    then
+        mkdir $backdir/.config
+    fi
+
+    for i in "$@"
+    do
+        if [ -d $HOME/.config/$i ]
+        then
+            local count=`ls -l $backdir/.config/| grep $i-$curdate | wc -l`
+            if [ "$count" == 0 ]
+            then
+                cp -ar $HOME/.config/$i $backdir/.config/$i-$curdate
+            else
+                cp -ar $HOME/.config/$i $backdir/.config/$i-$curdate-${count}
+            fi
+            rsync -r config/$i $HOME/.config/$i 1>/dev/null
+        else
+            rsync -r config/$i $HOME/.config/$i 1>/dev/null
+        fi
+    done
+}
+
 # Check for root
 [ $USER == "root" ] && { echo "Do NOT run as root!!!"; exit 1; }
 
@@ -80,6 +105,11 @@ case $1 in
     syncf bashrc psqlrc Xresources tmux.conf
     source ~/.bashrc
     xrdb -merge ~/.Xresources
+    echo " ${bld}${green}+${reset}"
+    ;;
+"appconf" )
+    echo -n "Installing applications configs..."
+    syncd rofi polybar nvim i3 mc
     echo " ${bld}${green}+${reset}"
     ;;
 * )
