@@ -623,3 +623,11 @@ bindsym $mod+equal [class="keepassx2|Keepassx2"] scratchpad show
 # bindsym button9 move left
 # bindsym button8 move right
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #81a2be #81a2be #ffffff #81a2be   #81a2be
+client.focused_inactive #5e8d87 #5e8d87 #ffffff #5e8d87   #5e8d87
+client.unfocused        #224766 #224766 #888888 #224766   #224766
+client.urgent           #a54242 #a54242 #ffffff #a54242   #a54242
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
