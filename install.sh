@@ -62,6 +62,7 @@ function syncf()
     done
 }
 
+# Function for backing up and installing app config dirs
 function syncd()
 {
     if [ ! -d "$backdir/.config" ]
@@ -93,7 +94,7 @@ function syncd()
 # Check for arguments and show usage
 [ ! -n "$1" ] && { program_is_installed rsync fc-cache nvim tmux xrdb; show_usage; }
 
-# Creating traps, just in case..
+# Creating traps, just in case...
 trap 'echo ""; echo "Exiting script..."; exit 1;' SIGINT SIGQUIT SIGTSTP
 
 # Installing things
@@ -106,6 +107,7 @@ case $1 in
     source ~/.bashrc
     xrdb -merge ~/.Xresources
     echo " ${bld}${green}+${reset}"
+    echo "You should also install Powerline fonts for vim-powerline plugin"
     ;;
 "appconf" )
     echo -n "Installing applications configs..."
@@ -118,8 +120,6 @@ case $1 in
 esac
 shift
 done
-
-echo "You should also install Powerline fonts for vim-powerline plugin"
 
 # Releasing traps
 trap - SIGINT SIGQUIT SIGTSTP
