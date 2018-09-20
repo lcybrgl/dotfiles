@@ -42,7 +42,7 @@ function program_is_installed()
 }
 
 # Function for backing up and installing config files
-function syncf()
+function sync_file()
 {
     if [ ! -d "$backdir" ]
     then
@@ -68,7 +68,7 @@ function syncf()
 }
 
 # Function for backing up and installing app config dirs
-function syncd()
+function sync_dir()
 {
     if [ ! -d "$backdir/.config" ]
     then
@@ -108,8 +108,8 @@ do
 case $1 in
 "dotfiles" )
     echo -n "Installing dotfiles..."
-    syncf bashrc psqlrc Xresources tmux.conf
-    syncd nvim rofi
+    sync_file bashrc psqlrc Xresources tmux.conf
+    sync_dir nvim rofi
     source ~/.bashrc
     xrdb -merge ~/.Xresources
     echo " ${bld}${green}+${reset}"
@@ -117,7 +117,7 @@ case $1 in
     ;;
 "appconf" )
     echo -n "Installing applications configs..."
-    syncd rofi polybar nvim i3 mc
+    sync_dir rofi polybar nvim i3 mc
     echo " ${bld}${green}+${reset}"
     ;;
 * )
