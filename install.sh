@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Install Powerline fonts
+# git clone https://github.com/powerline/fonts.git --depth=1
+# ./install.sh
+#
+
 set -e
 # Setting variables
 red=`tput setaf 1`
@@ -104,6 +109,7 @@ case $1 in
 "dotfiles" )
     echo -n "Installing dotfiles..."
     syncf bashrc psqlrc Xresources tmux.conf
+    syncd nvim rofi
     source ~/.bashrc
     xrdb -merge ~/.Xresources
     echo " ${bld}${green}+${reset}"
