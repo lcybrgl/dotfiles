@@ -32,6 +32,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias updt='sudo pacman -Suy --noconfirm'
+alias apdt="yaourt -Syu --aur"
 alias apl='ansible-playbook'
 alias vim='nvim'
 

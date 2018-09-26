@@ -19,6 +19,7 @@ function show_usage()
 {
     echo -e "\nUsage: install.sh [PARAMETER]...\nScript for installing my default dotfiles\n"
     echo -e "dotfiles\t-- Install bashrc, tmux.conf, Xresources, psqlrc"
+    echo -e "appconf\t-- Install apps configs"
     echo ""
     exit 1
 }
