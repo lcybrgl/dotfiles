@@ -52,7 +52,7 @@ filetype plugin on
 set autoindent
 set list listchars=tab:»·,trail:· " show extra space characters
 """"
-set termguicolors
+"set termguicolors
 set autoread
 set shortmess=I
 set wildmenu
