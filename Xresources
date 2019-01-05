@@ -14,7 +14,7 @@ URxvt.matcher.button: 1
 URxvt*.depth: 32
 
 ! URXvt Colorscheme
-! Zenburn theme
+! special
 URxvt.foreground:   #ffffff
 URxvt.background:   [80]#000000
 URxvt.cursorColor:  #ffffff
@@ -42,6 +42,7 @@ URxvt.color14:      #93e0e3
 ! white
 URxvt.color7:       #dcdccc
 URxvt.color15:      #ffffff
+
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 Xft.dpi: 96
