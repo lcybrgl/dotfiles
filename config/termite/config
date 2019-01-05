@@ -1,24 +1,19 @@
 [options]
-allow_bold = true
-audible_bell = false
-browser = xdg-open
-clickable_url = true
-cursor_blink = system
-cursor_shape = block
-dynamic_title = true
-filter_unmatched_urls = true
-font = Go Mono for Powerline 13
-geometry = 900x650
-highlight = #2f2f2f
-icon_name = terminal
-modify_other_keys = false
-mouse_autohide = false
+resize_grip = false
 scroll_on_output = false
 scroll_on_keystroke = true
-scrollback_lines = 15000
-size_hints = false
-search_wrap = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
 urgent_on_bell = true
+clickable_url = true
+scrollback_lines = 1000
+search_wrap = true
+cursor_blink = on
+cursor_shape = block
+font = Ubuntu Mono derivative Powerline 15
 
 [hints]
 #font = Monospace 12
@@ -35,7 +30,8 @@ urgent_on_bell = true
 # https://critical.ch/xterm/
 foreground      = ghost
 foreground_bold = #c5c8c6
-cursor          = #c5c8c6
+#cursor          = #c5c8c6
+cursor          = #f9f9f9
 background = rgba(0, 0, 0, 0.8)
 
 # black
