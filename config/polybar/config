@@ -4,7 +4,7 @@
 ;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
-;	  Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
+;   Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
 ;   https://github.com/jaagr/polybar/wiki/
 ;   https://github.com/jaagr/polybar/wiki/Configuration
 ;   https://github.com/jaagr/polybar/wiki/Formatting
@@ -39,6 +39,27 @@ format-margin =
 format-offset =
 
 [colors]
+;background = #1b2b34
+;foreground = #d8dee9
+linecolor = #554d7c
+transparent = #00ffffff
+base08 = #ec5f67
+red    = #ec5f67
+base09 = #f99157
+orange = #f99157
+base0a = #fac863
+yellow = #fac863
+base0b = #99c794
+green  = #99c794
+base0c = #5fb3b3
+teal   = #5fb3b3
+base0d = #6699cc
+blue   = #6699cc
+base0e = #c594c5
+purple = #c594c5
+base0f = #ab7967
+brown = #ab7967
+
 ; Nord theme ============
 ;background = #2F343F
 ;foreground = #f3f4f5
@@ -49,24 +70,22 @@ format-offset =
 ; =======================
 
 ; Gotham theme ==========
- background = #0a0f14
- foreground = #99d1ce
- alert = #d26937
- volume-min = #2aa889
- volume-med = #edb443
- volume-max = #c23127
+;; background = #0a0f14
+;; foreground = #99d1ce
+;; alert = #d26937
+;; volume-min = #2aa889
+;; volume-med = #edb443
+;; volume-max = #c23127
 ; =======================
 
 ; INTRCPTR theme ============
-;background = ${xrdb:color0:#222}
-;background = #aa000000
-;background-alt = #444
-;foreground = ${xrdb:color7:#222}
-;foreground = #fff
-;foreground-alt = #555
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
+background = #aa000000
+background-alt = #444
+foreground = #fff
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
 
 ################################################################################
 ################################################################################
@@ -80,7 +99,7 @@ format-offset =
 monitor = ${env:MONITOR}
 monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = false
+verride-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
@@ -90,10 +109,6 @@ height = 30
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 =
 
 radius = 0.0
 line-size = 2
@@ -105,21 +120,22 @@ border-size = 0
 ;border-top-size = 0
 ;border-bottom-size = 25
 border-color = #000000
-
 padding-left = 1
 padding-right = 1
-
 module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = NotoSans-Regular:size=10;0
-font-1 = fontawesome-regular:size=10:0
-font-2 = NotoMono-Regular: size=10;0
+font-1 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-2 = Font Awesome 5 Brands:pixelsize=10;2
+;font-2 = NotoMono-Regular: size=10;0
+;font-0 = Font Awesome 5 Free:pixelsize=10;2
+;font-1 = fontawesome-regular:size=10:0
 
 modules-left = i3 xwindow
-;modules-center = networkspeedup networkspeeddown
-modules-right = memory2 cpu2 date
+modules-right = xkeyboard
+modules-center = date cpu2 memory2
 
 separator = |
 
@@ -390,9 +406,8 @@ fuzzy-match = false
 ;extra icons to choose from
 ;http://fontawesome.io/cheatsheet/
 ;       v     
-
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -409,9 +424,11 @@ ws-icon-default = " "
 format = <label-state> <label-mode>
 
 label-mode = %mode%
-label-mode-padding = 2
-label-mode-foreground = #000000
-label-mode-background = #FFBB00
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+;label-mode-foreground = #000000
+;label-mode-background = #FFBB00
 
 ; Available tokens:
 ;   %name%
@@ -711,7 +728,7 @@ interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ;   
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #cd1f3f
 format-underline = #cd1f3f
 
@@ -765,7 +782,7 @@ type = internal/cpu
 interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = " "
 format-prefix-foreground = #cd1f3f
 format-underline = #cd1f3f
 
@@ -795,7 +812,7 @@ type = internal/date
 interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = " %Y-%m-%d%""
+date = " %Y-%m-%d%"
 date-alt = " %d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M
@@ -994,7 +1011,7 @@ interval = 1
 label = %percentage_used%%
 
 format = Mem <label>
-format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = #3384d0
 format-underline = #3384d0
 format-foreground = ${colors.foreground}
@@ -1409,7 +1426,6 @@ type = internal/xwindow
 ; Default: %title%
 label = %title%
 label-maxlen = 50
-
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
