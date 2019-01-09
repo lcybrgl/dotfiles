@@ -38,6 +38,14 @@ set $down j
 set $left h
 set $right l
 
+# MPC Bindings
+bindsym $mod+CTRL+p exec --no-startup-id mpc pause && notify-send -u normal -a mpd  MPD "Paused playback"
+bindsym $mod+CTRL+i exec --no-startup-id mpc play && notify-send -u normal -a mpd  MPD "Resuming playback"
+bindsym $mod+CTRL+l exec --no-startup-id mpc next && notify-send -u normal -a mpd  MPD "Playing next track"
+bindsym $mod+CTRL+u exec --no-startup-id mpd_volume up
+bindsym $mod+CTRL+j exec --no-startup-id mpd_volume down
+bindsym $mod+CTRL+y exec --no-startup-id mpd_current
+
 #####################################################################################################################
 #################                          Single and Dual screen                                   #################
 #####################################################################################################################
@@ -325,7 +333,7 @@ exec --no-startup-id sleep 5 && megasync
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Updater
-exec --no-startup-id pamac-tray
+#exec --no-startup-id pamac-tray
 
 # network
 exec --no-startup-id nm-applet
@@ -346,8 +354,9 @@ exec --no-startup-id xfce4-power-manager &
 # ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
 # activate again if errors occurr
 #exec --no-startup-id xfsettingsd &
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+#exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 #exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id mpd /home/cybrg/Media/mpd/mpd.conf &
 
 #####################################################################################################################
 #################                          applications keyboard shortcuts                          #################
@@ -455,6 +464,8 @@ for_window [class="^Vlc$"] floating enable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
+for_window [class="whats-app-*"] floating enable
+for_window [class="qbittorrent|qBittorrent"] floating enable
 
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
@@ -540,8 +551,8 @@ popup_during_fullscreen smart
 # want it
 
 for_window [class="^.*"] border pixel 3
-gaps inner 7
-gaps outer 7
+gaps inner 5
+gaps outer 9
 #smart_gaps on
 #smart_borders on
 
@@ -632,5 +643,25 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 bar {
-        status_command i3status
+        position top
+        #status_command i3status
+        #status_command i3status -c ~/.config/i3/i3status.conf
+        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        status_command ~/.config/i3/start-conky-i3statusbar.sh
+        #status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+        #tray_output primary
+        tray_output DVI-D-0
+
+        colors {
+            background #2F2F2F
+            statusline #eeeeee
+            separator  #666666
+            #                     border  backgr. text
+            focused_workspace     #a9a9a9 #5f676a #eeeeee
+            active_workspace      #a9a9a9 #5f676a #a9a9a9
+            inactive_workspace    #a9a9a9 #222222 #a9a9a9
+            urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+        }
+
 }
+
