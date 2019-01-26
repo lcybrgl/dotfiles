@@ -1,47 +1,54 @@
-!!!!!!!!!!!!!!!!!!!!!!!
-URxvt.font: xft:Ubuntu Mono derivative Powerline:size=14
-URxvt.scrollBar: false
-URxvt.cursorBlink: true
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt*.depth: 32
-
-! URXvt Colorscheme
+! Brewer dark scheme
 ! special
-URxvt.foreground:   #ffffff
-URxvt.background:   [80]#000000
-URxvt.cursorColor:  #ffffff
+*.foreground:   #b7b8b9
+*.background:   #0c0d0e
+*.cursorColor:  #b7b8b9
 ! black
-URxvt.color0:       #1e2320
-URxvt.color8:       #709080
+*.color0:       #0c0d0e
+*.color8:       #737475
 ! red
-URxvt.color1:       #705050
-URxvt.color9:       #dca3a3
+*.color1:       #e31a1c
+*.color9:       #e31a1c
 ! green
-URxvt.color2:       #60b48a
-URxvt.color10:      #c3bf9f
+*.color2:       #31a354
+*.color10:      #31a354
 ! yellow
-URxvt.color3:       #dfaf8f
-URxvt.color11:      #f0dfaf
+*.color3:       #dca060
+*.color11:      #dca060
 ! blue
-URxvt.color4:       #506070
-URxvt.color12:      #94bff3
+*.color4:       #3182bd
+*.color12:      #3182bd
 ! magenta
-URxvt.color5:       #dc8cc3
-URxvt.color13:      #ec93d3
+*.color5:       #756bb1
+*.color13:      #756bb1
 ! cyan
-URxvt.color6:       #8cd0d3
-URxvt.color14:      #93e0e3
+*.color6:       #80b1d3
+*.color14:      #80b1d3
 ! white
-URxvt.color7:       #dcdccc
-URxvt.color15:      #ffffff
+*.color7:       #b7b8b9
+*.color15:      #fcfdfe
+
+!!!!!!!!!!!!!!!!!!!!!!!!
+!! The default colors are "Gruvbox":
+!*.color0: #1d2021
+!*.color1: #cc241d
+!*.color2: #98971a
+!*.color3: #d79921
+!*.color4: #458588
+!*.color5: #b16286
+!*.color6: #689d6a
+!*.color7: #a89984
+!*.color8: #928374
+!*.color9: #fb4934
+!*.color10: #b8bb26
+!*.color11: #fabd2f
+!*.color12: #83a598
+!*.color13: #d3869b
+!*.color14: #8ec07c
+!*.color15: #ebdbb2
+st.font: Ubuntu Mono derivative Powerline:pixelsize=18
+!! Transparency (0-255):
+*.alpha: 245
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -52,9 +59,6 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-
-XTerm*pointerColor: #16A085
-XTerm*faceSize: 11
 
 ! ROFI SETUP HERE !
 
