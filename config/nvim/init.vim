@@ -12,11 +12,7 @@ Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 hi Normal guibg=NONE ctermbg=NONE
 syntax enable
-"colorscheme PaperColor
-"colorscheme OceanicNext
-"colorscheme nighted
-"colorscheme VisualStudioDark
-colorscheme vim-material
+colorscheme gruvbox
 set background=dark
 """" Misc
 set backspace=indent,eol,start
@@ -35,8 +31,6 @@ nmap <leader>q :q!<cr>
 nmap <leader>a :NERDTree<cr>
 nmap <leader>r :NERDTreeToggle<cr>
 map <leader>s :source ~/.config/nvim/init.vim<CR>
-" Russian input support
-"set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
@@ -52,6 +46,8 @@ filetype plugin on
 set autoindent
 set list listchars=tab:»·,trail:· " show extra space characters
 """"
+"let base16colorspace=256  " Access colors present in 256 colorspace
+"set t_Co=256
 "set termguicolors
 set autoread
 set shortmess=I
@@ -74,6 +70,9 @@ set foldcolumn=1
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
+" Autocmd
+autocmd BufWritePost ~/.Xresources,~/.Xdefaults ! xrdb %
+
 """ Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
@@ -81,8 +80,7 @@ set noswapfile
 set nowritebackup
 set viminfo=
 """ Airline config
-"let g:airline_theme='papercolor'
-let g:airline_theme='cool'
+let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 

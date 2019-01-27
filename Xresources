@@ -1,32 +1,70 @@
-! Brewer dark scheme
+! Twilight dark
 ! special
-*.foreground:   #b7b8b9
-*.background:   #0c0d0e
-*.cursorColor:  #b7b8b9
+*.foreground:   #a7a7a7
+*.background:   #1e1e1e
+*.cursorColor:  #a7a7a7
+
 ! black
-*.color0:       #0c0d0e
-*.color8:       #737475
+*.color0:       #000000
+*.color8:       #5f5a60
+
 ! red
-*.color1:       #e31a1c
-*.color9:       #e31a1c
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
+
 ! green
-*.color2:       #31a354
-*.color10:      #31a354
+*.color2:       #8f9d6a
+*.color10:      #8f9d6a
+
 ! yellow
-*.color3:       #dca060
-*.color11:      #dca060
+*.color3:       #f9ee98
+*.color11:      #f9ee98
+
 ! blue
-*.color4:       #3182bd
-*.color12:      #3182bd
+*.color4:       #7587a6
+*.color12:      #7587a6
+
 ! magenta
-*.color5:       #756bb1
-*.color13:      #756bb1
+*.color5:       #9b859d
+*.color13:      #9b859d
+
 ! cyan
-*.color6:       #80b1d3
-*.color14:      #80b1d3
+*.color6:       #afc4db
+*.color14:      #afc4db
+
 ! white
-*.color7:       #b7b8b9
-*.color15:      #fcfdfe
+*.color7:       #a7a7a7
+*.color15:      #ffffff
+
+!! Brewer dark scheme
+!! special
+!*.foreground:   #b7b8b9
+!*.background:   #0c0d0e
+!*.cursorColor:  #b7b8b9
+!! black
+!*.color0:       #0c0d0e
+!*.color8:       #737475
+!! red
+!*.color1:       #e31a1c
+!*.color9:       #e31a1c
+!! green
+!*.color2:       #31a354
+!*.color10:      #31a354
+!! yellow
+!*.color3:       #dca060
+!*.color11:      #dca060
+!! blue
+!*.color4:       #3182bd
+!*.color12:      #3182bd
+!! magenta
+!*.color5:       #756bb1
+!*.color13:      #756bb1
+!! cyan
+!*.color6:       #80b1d3
+!*.color14:      #80b1d3
+!! white
+!*.color7:       #b7b8b9
+!*.color15:      #fcfdfe
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 !! The default colors are "Gruvbox":
@@ -48,7 +86,7 @@
 !*.color15: #ebdbb2
 st.font: Ubuntu Mono derivative Powerline:pixelsize=18
 !! Transparency (0-255):
-*.alpha: 245
+*.alpha: 200
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
