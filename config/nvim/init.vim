@@ -16,7 +16,8 @@ colorscheme gruvbox
 set background=dark
 """" Misc
 set backspace=indent,eol,start
-set clipboard=unnamed
+"set clipboard=unnamed
+set clipboard=unnamedplus
 """" Leader Shortcuts
 let mapleader="'"
 map <C-j> <C-W>j
@@ -31,6 +32,9 @@ nmap <leader>q :q!<cr>
 nmap <leader>a :NERDTree<cr>
 nmap <leader>r :NERDTreeToggle<cr>
 map <leader>s :source ~/.config/nvim/init.vim<CR>
+autocmd BufWritePost ~/.Xresources,~/.Xdefaults :! xrdb %
+vnoremap <C-c> "+y
+map <C-p> "+P
 set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
@@ -65,15 +69,9 @@ set notimeout ttimeout ttimeoutlen=200
 set showmatch
 set nohlsearch
 set encoding=utf8
-" Add a bit extra margin to the left
 set foldcolumn=1
-" No annoying sound on errors
 set noerrorbells
 set novisualbell
-" Autocmd
-autocmd BufWritePost ~/.Xresources,~/.Xdefaults ! xrdb %
-
-""" Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
