@@ -35,6 +35,8 @@ exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 exec --no-startup-id firefox
 exec --no-startup-id $term
 exec --no-startup-id keepassx2
+exec --no-startup-id telegram-desktop
+exec --no-startup-id whatsie
 
 # Bindings main
 ##################################################
@@ -59,8 +61,6 @@ bindsym $mod+Shift+u exec --no-startup-id pamixer -u
 ##################################################
 bindsym $mod+Return exec --no-startup-id $term
 bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
-bindsym $mod+t exec --no-startup-id telegram-desktop
-bindsym $mod+y exec --no-startup-id whatsie
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser
 bindsym $mod+$left focus left
@@ -80,13 +80,29 @@ bindsym $mod+space focus mode_toggle
 ##################################################
 bindsym $mod+Shift+w move scratchpad
 bindsym $mod+minus scratchpad show
+
 for_window [class="keepassx2|Keepassx2"] floating enable
 for_window [class="keepassx2|Keepassx2"] border pixel 5
-for_window [class="keepassx2|Keepassx2"] resize set 500 300
+for_window [class="keepassx2|Keepassx2"] resize set 900 650
 for_window [class="keepassx2|Keepassx2"] move scratchpad
 for_window [title="Открыть хранилище"] scratchpad show
-for_window [title="Открыть хранилище"] resize set 300 250
+for_window [title="Открыть хранилище"] resize set 900 650
+for_window [title="Открыть хранилище"] move center
 bindsym $mod+p [class="keepassx2|Keepassx2"] scratchpad show
+
+for_window [class="telegram*|Telegram*"] floating enable
+for_window [class="telegram*|Telegram*"] border pixel 5
+for_window [class="telegram*|Telegram*"] resize set 1000 900
+for_window [class="telegram*|Telegram*"] move position 920 40
+for_window [class="telegram*|Telegram*"] move scratchpad
+bindsym $mod+t [class="telegram*|Telegram*"] scratchpad show
+
+for_window [class="whatsie*|Whatsie*"] floating enable
+for_window [class="whatsie*|Whatsie*"] border pixel 5
+for_window [class="whatsie*|Whatsie*"] resize set 1000 900
+for_window [class="whatsie*|Whatsie*"] move position 900 50
+for_window [class="whatsie*|Whatsie*"] move scratchpad
+bindsym $mod+y [class="whatsie*|Whatsie*"] scratchpad show
 
 #floating enabled from some programs - find with xprop
 ##################################################
@@ -99,7 +115,6 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="Navigator|Tor*"] floating enable
-for_window [class="whatsie|Whatsie|telegram*|Telegram*"] floating enable
 for_window [class="qbittorrent|qBittorrent"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
