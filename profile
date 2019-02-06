@@ -3,3 +3,4 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/local/bin/st
+export SUDO_ASKPASS="/usr/local/bin/dmenupass"

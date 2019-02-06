@@ -12,10 +12,11 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LS_OPTIONS='--color=auto'
-export TERM=xterm-256color
+#export TERM=xterm-256color
+export TERM=screen-256color
 eval "`dircolors`"
+tput smkx
 
-#PS1='\[\033[01;32m\]\u@\h:\[\e[m\] \[\e[1;34m\]\W\[\e[m\]\[\e[1;34m\] \$\[\e[m\] '
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 # If not running interactively, don't do anything
