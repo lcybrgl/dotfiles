@@ -12,8 +12,6 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LS_OPTIONS='--color=auto'
-#export TERM=xterm-256color
-export TERM=screen-256color
 eval "`dircolors`"
 tput smkx
 
@@ -34,6 +32,5 @@ alias updt='sudo pacman -Suy --noconfirm'
 alias apdt="yaourt -Syu --aur --noconfirm"
 alias apl='ansible-playbook'
 alias vim='nvim'
-alias mx='xrdb merge $HOME/.Xresources'
 alias tt='tmux a'
 
