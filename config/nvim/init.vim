@@ -2,28 +2,22 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
-Plug 'wolf-dog/nighted.vim'
-Plug 'Heorhiy/VisualStudioDark.vim'
-Plug 'hzchirs/vim-material'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'lifepillar/vim-solarized8'
-Plug 'nightsense/cosmic_latte'
-Plug 'tjammer/blayu.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+Plug 'morhetz/gruvbox'
 call plug#end()
-""""""""""""""""""""""""""""""""""""
-set clipboard+=unnamedplus
-set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
 syntax enable
 "colorscheme PaperColor
-colorscheme blayu
-set background=dark
+colorscheme gruvbox
+"set background=dark
 """" Misc
+set encoding=UTF-8
 set backspace=indent,eol,start
-set clipboard=unnamed
 set clipboard=unnamedplus
 """" Leader Shortcuts
 let mapleader="'"
@@ -39,7 +33,7 @@ nmap <leader>q :q!<cr>
 nmap <leader>a :NERDTree<cr>
 nmap <leader>r :NERDTreeToggle<cr>
 map <leader>s :source ~/.config/nvim/init.vim<CR>
-"autocmd BufWritePost ~/.Xresources,~/.Xdefaults :! xrdb %
+autocmd BufWritePost ~/.Xresources,~/.Xdefaults :! xrdb %
 vnoremap <C-c> "+y
 map <C-p> "+P
 set iminsert=0
@@ -58,6 +52,8 @@ set autoindent
 set list listchars=tab:»·,trail:· " show extra space characters
 """"
 "let base16colorspace=256  " Access colors present in 256 colorspace
+"set t_Co=256
+"set termguicolors
 set autoread
 set shortmess=I
 set wildmenu
@@ -81,10 +77,9 @@ set nobackup
 set nowb
 set noswapfile
 set nowritebackup
-set cursorline
 set viminfo=
 """ Airline config
-let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
